@@ -1,0 +1,13 @@
+# Illux Mosaik — HTTP headers for the static host (Cloudflare Pages / Netlify `_headers` format).
+# The app never uploads anything, so it needs no connect-src to other hosts.
+# frame-ancestors decides WHO may embed the app in an iframe: only illux.dk.
+# Do NOT add X-Frame-Options: it would conflict with frame-ancestors and block the embed.
+# When the NO/SE shops should embed it too, add their origins to frame-ancestors
+# AND to allowedParentOrigins in src/config.js.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' blob: data:; worker-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self' https://illux.dk https://www.illux.dk
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cache-Control: public, max-age=0, must-revalidate

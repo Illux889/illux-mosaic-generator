@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local reference material (large, not shipped)
+reference/
+
+# Local test images and screenshots
+test-images/
+.playwright-mcp/
+*.log

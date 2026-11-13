@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Same security policy as _headers. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' blob: data:; worker-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="data:,">
+  <title>Din egen fotomosaik – Illux Mosaik</title>
+  <meta name="description" content="Gør dit yndlingsbillede til en mosaik af dine egne minder. Alt sker i din browser – intet uploades.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="src/styles/tokens.css">
+  <link rel="stylesheet" href="src/styles/mosaic.css">
+  <link rel="stylesheet" href="page.css">
+  <script type="module" src="page.js"></script>
+</head>
+<body class="ilx-v2">
+  <a class="ilx-v2-skip" href="#lav-din-mosaik">Spring direkte til mosaikværktøjet</a>
+
+  <main>
+    <!-- Hero -->
+    <section class="ilx-v2-hero" aria-labelledby="ilx-v2-title">
+      <div class="ilx-v2-wrap ilx-v2-hero__grid">
+        <div class="ilx-v2-hero__copy">
+          <p class="ilx-v2-eyebrow">Mosaikkunst med dine egne billeder</p>
+          <h1 class="ilx-v2-hero__title" id="ilx-v2-title">Ét billede.<br>Tusind minder.<br><span class="ilx-v2-hero__accent">Dit kunstværk.</span></h1>
+          <p class="ilx-v2-lead">Gør dit yndlingsbillede til en mosaik af alle de små øjeblikke, der betyder noget. På afstand ser du det store motiv. Tæt på ser du dine egne billeder.</p>
+          <div class="ilx-v2-actions">
+            <a class="ilx-v2-btn ilx-v2-btn--filled" href="#lav-din-mosaik">Lav din mosaik</a>
+            <a class="ilx-v2-btn ilx-v2-btn--secondary" href="#foer-og-efter">Se før og efter</a>
+          </div>
+          <ul class="ilx-v2-checks">
+            <li>Gratis at prøve</li>
+            <li>Dine billeder bliver på din egen enhed</li>
+            <li>Vælg materiale bagefter</li>
+          </ul>
+        </div>
+        <div class="ilx-v2-hero__art">
+          <figure class="ilx-v2-frame">
+            <img src="billeder/mosaik.jpg" width="1200" height="800"
+              alt="Fotomosaik af en mops pakket ind i et ternet tæppe på en skovsti. Billedet er bygget af mange små fotos.">
+          </figure>
+          <figure class="ilx-v2-detail">
+            <img src="billeder/detalje.jpg" width="360" height="360"
+              alt="Udsnit tæt på mopsens ansigt. Hver lille firkant er et helt foto, fx et landskab, en bænk eller et træ.">
+            <figcaption><strong>Gå tættere på.</strong> Hver lille brik er et foto.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="ilx-v2-section" aria-labelledby="ilx-v2-how-title">
+      <div class="ilx-v2-wrap">
+        <p class="ilx-v2-eyebrow">Sådan gør du</p>
+        <h2 class="ilx-v2-h2" id="ilx-v2-how-title">Enkel at lave. Sjov at gå på opdagelse i.</h2>
+        <ol class="ilx-v2-steps">
+          <li class="ilx-v2-step">
+            <h3 class="ilx-v2-h3">Vælg dit hovedbillede</h3>
+            <p>Det store motiv, man ser på afstand. Et portræt, et kæledyr eller et logo med tydelige farver virker godt.</p>
+          </li>
+          <li class="ilx-v2-step">
+            <h3 class="ilx-v2-h3">Tilføj dine billeder</h3>
+            <p>Alle de små billeder, mosaikken bygges af. Vælg mange på én gang. Jo flere forskellige, jo flottere.</p>
+          </li>
+          <li class="ilx-v2-step">
+            <h3 class="ilx-v2-h3">Vælg størrelse og fortsæt</h3>
+            <p>Se mosaikken, zoom ind og justér den. Fortsæt derefter til produktet, hvor du vælger materiale.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Before and after: a real example made with the tool below -->
+    <section class="ilx-v2-section ilx-v2-section--tinted" id="foer-og-efter" aria-labelledby="ilx-v2-compare-title" tabindex="-1">
+      <div class="ilx-v2-wrap">
+        <p class="ilx-v2-eyebrow">Før og efter</p>
+        <h2 class="ilx-v2-h2" id="ilx-v2-compare-title">Samme billede. Nu fortalt med 48 andre.</h2>
+        <p class="ilx-v2-intro">Dette eksempel er lavet med mosaikværktøjet på denne side. Hovedbilledet er en mops i et tæppe. Mosaikken er bygget af 48 forskellige fotos.</p>
+        <div class="ilx-v2-compare">
+          <figure class="ilx-v2-compare__item">
+            <img src="demo/hovedbillede.jpg" width="800" height="533" loading="lazy" decoding="async"
+              alt="Originalbilledet: en mops pakket ind i et ternet tæppe midt på en skovsti.">
+            <figcaption><strong>Før:</strong> dit hovedbillede.</figcaption>
+          </figure>
+          <figure class="ilx-v2-compare__item">
+            <img src="billeder/mosaik.jpg" width="1200" height="800" loading="lazy" decoding="async"
+              alt="Samme motiv som fotomosaik. På afstand ligner det originalen.">
+            <figcaption><strong>Efter:</strong> samme motiv som fotomosaik.</figcaption>
+          </figure>
+          <figure class="ilx-v2-compare__item">
+            <img src="billeder/detalje.jpg" width="360" height="360" loading="lazy" decoding="async"
+              alt="Udsnit tæt på mopsens ansigt. Hver lille firkant er et helt foto.">
+            <figcaption><strong>Tæt på:</strong> hver brik er et af dine billeder.</figcaption>
+          </figure>
+        </div>
+        <p class="ilx-v2-note">Vil du prøve med de samme billeder? Brug knappen <strong>Prøv med eksempelbilleder</strong> ved mosaikværktøjet.</p>
+      </div>
+    </section>
+
+    <!-- Ideas, with a theme filter -->
+    <section class="ilx-v2-section" aria-labelledby="ilx-v2-ideas-title">
+      <div class="ilx-v2-wrap">
+        <p class="ilx-v2-eyebrow">Idéer</p>
+        <h2 class="ilx-v2-h2" id="ilx-v2-ideas-title">Ét motiv. Mange historier.</h2>
+        <p class="ilx-v2-intro">Et kæledyr, et menneske eller et logo. Til venstre er hovedbilledet, og til højre er den færdige mosaik. Det lille billede viser mosaikken tæt på.</p>
+        <div class="ilx-v2-filters" role="group" aria-label="Vis idéer om" data-filters hidden>
+          <button type="button" class="ilx-v2-chip" data-filter="alle" aria-pressed="true">Alle idéer</button>
+          <button type="button" class="ilx-v2-chip" data-filter="familie" aria-pressed="false">Familie og minder</button>
+          <button type="button" class="ilx-v2-chip" data-filter="sport" aria-pressed="false">Sport og fællesskab</button>
+          <button type="button" class="ilx-v2-chip" data-filter="erhverv" aria-pressed="false">Virksomheder</button>
+        </div>
+        <p class="ilx-v2-visually-hidden" role="status" aria-live="polite" data-filter-status></p>
+        <ul class="ilx-v2-ideas" data-ideas>
+          <li class="ilx-v2-idea ilx-v2-idea--example" data-category="familie">
+            <figure class="ilx-v2-example">
+              <div class="ilx-v2-example__pair">
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/hund-foer.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Før: en glad golden retriever, der sidder i en grøn have.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Før</span>
+                </div>
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/hund-efter.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Efter: samme billede som fotomosaik, bygget af 90 små billeder af hunde.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Efter</span>
+                  <img class="ilx-v2-example__detail" src="eksempler/hund-detalje.jpg" width="400" height="400" loading="lazy" decoding="async" alt="Tæt på: mosaikken består af små billeder af hunde.">
+                </div>
+              </div>
+            </figure>
+            <div class="ilx-v2-idea__body">
+              <p class="ilx-v2-idea__tag">Kæledyr</p>
+              <h3 class="ilx-v2-h3">Dit kæledyr. Alle jeres øjeblikke.</h3>
+              <p>Brug et tydeligt portræt som hovedbillede. Fyld mosaikken med billeder fra gåture, leg og ferier.</p>
+            </div>
+          </li>
+          <li class="ilx-v2-idea ilx-v2-idea--example" data-category="familie">
+            <figure class="ilx-v2-example">
+              <div class="ilx-v2-example__pair">
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/barn-foer.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Før: en dreng med krøllet hår og en cremefarvet strikbluse, der smiler stort.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Før</span>
+                </div>
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/barn-efter.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Efter: samme billede som fotomosaik, bygget af 90 små billeder af børn og familier.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Efter</span>
+                  <img class="ilx-v2-example__detail" src="eksempler/barn-detalje.jpg" width="400" height="400" loading="lazy" decoding="async" alt="Tæt på: mosaikken består af små billeder fra ferier og fødselsdage.">
+                </div>
+              </div>
+            </figure>
+            <div class="ilx-v2-idea__body">
+              <p class="ilx-v2-idea__tag">Børneportræt</p>
+              <h3 class="ilx-v2-h3">Ét portræt. En hel barndom.</h3>
+              <p>Saml fødselsdage, ferier og hverdagens små øjeblikke i ét billede. En god gave til bedsteforældre.</p>
+            </div>
+          </li>
+          <li class="ilx-v2-idea ilx-v2-idea--example" data-category="familie">
+            <figure class="ilx-v2-example">
+              <div class="ilx-v2-example__pair">
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/bryllup-foer.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Før: et brudepar, der griner tæt sammen i en grøn have.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Før</span>
+                </div>
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/bryllup-efter.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Efter: samme billede som fotomosaik, bygget af 90 små billeder fra bryllupper og rejser.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Efter</span>
+                  <img class="ilx-v2-example__detail" src="eksempler/bryllup-detalje.jpg" width="400" height="400" loading="lazy" decoding="async" alt="Tæt på: mosaikken består af små billeder af par, fester og rejser.">
+                </div>
+              </div>
+            </figure>
+            <div class="ilx-v2-idea__body">
+              <p class="ilx-v2-idea__tag">Bryllup</p>
+              <h3 class="ilx-v2-h3">Jeres dag. Hele historien.</h3>
+              <p>Bryllupsbilledet som det store motiv. Jeres rejser, familie og venner som de små billeder.</p>
+            </div>
+          </li>
+          <li class="ilx-v2-idea ilx-v2-idea--example" data-category="sport">
+            <figure class="ilx-v2-example">
+              <div class="ilx-v2-example__pair">
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/klub-foer.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Før: et opdigtet klubmærke i blåt og guld med tre stjerner, en fodbold, ordene DIN KLUB og årstallet 1921.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Før</span>
+                </div>
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/klub-efter.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Efter: samme klubmærke som fotomosaik, bygget af 90 små billeder fra kampe, fans og tribuner.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Efter</span>
+                  <img class="ilx-v2-example__detail" src="eksempler/klub-detalje.jpg" width="400" height="400" loading="lazy" decoding="async" alt="Tæt på: mosaikken består af små billeder fra stadioner, fans og hold i guld og blå farver.">
+                </div>
+              </div>
+            </figure>
+            <div class="ilx-v2-idea__body">
+              <p class="ilx-v2-idea__tag">Klub og forening</p>
+              <h3 class="ilx-v2-h3">Din klub. Jeres fællesskab.</h3>
+              <p>Klublogoet som hovedbillede. Medlemmernes billeder fra kampe, træning og fester som brikkerne. Her vist med et opdigtet klubmærke.</p>
+            </div>
+          </li>
+          <li class="ilx-v2-idea ilx-v2-idea--example" data-category="sport">
+            <figure class="ilx-v2-example">
+              <div class="ilx-v2-example__pair">
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/fodbold-foer.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Før: en opdigtet fodboldspiller i grøn trøje, der jubler med knyttet næve på et stadion.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Før</span>
+                </div>
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/fodbold-efter.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Efter: samme billede som fotomosaik, bygget af 80 små fodboldbilleder.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Efter</span>
+                  <img class="ilx-v2-example__detail" src="eksempler/fodbold-detalje.jpg" width="400" height="400" loading="lazy" decoding="async" alt="Tæt på: mosaikken består af små billeder fra kampe og træning.">
+                </div>
+              </div>
+            </figure>
+            <div class="ilx-v2-idea__body">
+              <p class="ilx-v2-idea__tag">Sportsportræt</p>
+              <h3 class="ilx-v2-h3">Din fodboldhelt. Dine fodboldminder.</h3>
+              <p>Et spillerportræt bygget af kampdage, træning og livet på banen. Her vist med en opdigtet spiller.</p>
+            </div>
+          </li>
+          <li class="ilx-v2-idea ilx-v2-idea--example" data-category="erhverv">
+            <figure class="ilx-v2-example">
+              <div class="ilx-v2-example__pair">
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/logo-foer.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Før: ILLUX-logoet i hvidt på en beige cirkel.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Før</span>
+                </div>
+                <div class="ilx-v2-example__img">
+                  <img src="eksempler/logo-efter.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Efter: samme logo som fotomosaik, bygget af 170 små billeder af kontorer, planter og lyse rum.">
+                  <span class="ilx-v2-example__label" aria-hidden="true">Efter</span>
+                  <img class="ilx-v2-example__detail" src="eksempler/logo-detalje.jpg" width="400" height="400" loading="lazy" decoding="async" alt="Tæt på: mosaikken består af lyse billeder af kontorer, planter og kaffekopper.">
+                </div>
+              </div>
+            </figure>
+            <div class="ilx-v2-idea__body">
+              <p class="ilx-v2-idea__tag">Virksomhed og jubilæum</p>
+              <h3 class="ilx-v2-h3">Ét logo. Alle dem bag.</h3>
+              <p>Virksomhedens logo bygget af medarbejdere, projekter og milepæle. Her vist med vores eget logo.</p>
+            </div>
+          </li>
+        </ul>
+        <p class="ilx-v2-note ilx-v2-ideas__note">Alle mosaikker her er lavet med mosaikværktøjet på denne side, i 100 × 100 cm. Hovedbillederne er AI-genererede illustrationer med opdigtede personer, et opdigtet klubmærke og ILLUX’ eget logo.</p>
+      </div>
+    </section>
+
+    <!-- The tool itself -->
+    <section class="ilx-v2-section ilx-v2-section--tool" id="lav-din-mosaik" aria-label="Mosaikværktøj" tabindex="-1">
+      <div class="ilx-v2-wrap">
+        <aside class="ilx-v2-demo" aria-labelledby="ilx-v2-demo-title" data-demo hidden>
+          <p class="ilx-v2-demo__title" id="ilx-v2-demo-title">Bare nysgerrig?</p>
+          <p>Prøv med vores eksempelbilleder: mopsen og 48 små fotos. Billederne hentes til din browser (ca. 3 MB), og mosaikken bliver lavet med det samme.</p>
+          <button type="button" class="ilx-v2-btn ilx-v2-btn--secondary" data-demo-button>Prøv med eksempelbilleder</button>
+          <p class="ilx-v2-demo__status" role="status" data-demo-status></p>
+        </aside>
+        <div class="ilx-v2-tool">
+          <div data-ilx-mosaic-root data-heading-level="2"></div>
+          <noscript><p>Slå JavaScript til for at bruge mosaikværktøjet.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questions and answers -->
+    <section class="ilx-v2-section" aria-labelledby="ilx-v2-faq-title">
+      <div class="ilx-v2-wrap ilx-v2-faq">
+        <div>
+          <p class="ilx-v2-eyebrow">Godt at vide</p>
+          <h2 class="ilx-v2-h2" id="ilx-v2-faq-title">Spørgsmål og svar</h2>
+        </div>
+        <div class="ilx-v2-faq__list">
+          <details class="ilx-v2-faq__item">
+            <summary>Hvad er forskellen på hovedbilledet og de små billeder?</summary>
+            <p>Hovedbilledet er det store motiv, du ser på afstand. De små billeder er brikkerne i mosaikken. Dem ser du, når du går tæt på.</p>
+          </details>
+          <details class="ilx-v2-faq__item">
+            <summary>Hvor mange billeder skal jeg bruge?</summary>
+            <p>Du skal bruge mindst 2 små billeder. Mosaikken bliver flottest med mange forskellige: gerne mindst 50 og helst 200 eller flere. Du kan bruge op til 1.000.</p>
+          </details>
+          <details class="ilx-v2-faq__item">
+            <summary>Hvilke billeder kan jeg bruge?</summary>
+            <p>JPG, PNG og WebP på op til 40 MB pr. billede. Billeder fra en iPhone i formatet HEIC kan ikke bruges direkte. Vælg dem fra Fotos-appen, så laver iPhonen dem normalt om til JPG.</p>
+          </details>
+          <details class="ilx-v2-faq__item">
+            <summary>Bliver mine billeder sendt nogen steder hen?</summary>
+            <p>Nej. Alt sker i din egen browser på din computer eller telefon. Ingen billeder bliver sendt til os eller andre.</p>
+          </details>
+          <details class="ilx-v2-faq__item">
+            <summary>Hvor stor kan mosaikken blive?</summary>
+            <p>Du vælger selv størrelsen, fra 10 til 300 cm på hver led. Mosaikken får den kvalitet, der passer til størrelsen.</p>
+          </details>
+          <details class="ilx-v2-faq__item">
+            <summary>Hvordan får jeg den printet?</summary>
+            <p>Når mosaikken er færdig, trykker du på "Fortsæt til produkt". Der vælger du materiale og ser din mosaik på produktet. Prisen afhænger af størrelse og materiale.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing call to action -->
+    <section class="ilx-v2-closing" aria-labelledby="ilx-v2-closing-title">
+      <div class="ilx-v2-wrap">
+        <p class="ilx-v2-eyebrow">Dine billeder fortjener mere end en skærm</p>
+        <h2 class="ilx-v2-h2" id="ilx-v2-closing-title">Giv dine minder en plads på væggen.</h2>
+        <a class="ilx-v2-btn ilx-v2-btn--filled" href="#lav-din-mosaik">Lav din mosaik</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ilx-v2-footer">
+    <div class="ilx-v2-wrap">
+      <p>Illux Mosaik · ILLUX A/S</p>
+      <p>Eksempelbillederne er fra Unsplash. <a href="demo/KILDER.txt">Se fotografernes navne</a></p>
+    </div>
+  </footer>
+</body>
+</html>

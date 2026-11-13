@@ -1,0 +1,57 @@
+Eksempelbilleder til version 2 (knappen "Prøv med eksempelbilleder" og før/efter-eksemplet).
+Alle er fotos fra Unsplash (https://unsplash.com/license): fri brug, også kommercielt, uden krav om navngivning.
+Vi nævner fotograferne alligevel. Hentet via Lorem Picsum (https://picsum.photos).
+
+hovedbillede.jpg  —  Matthew Wiebe  —  https://unsplash.com/photos/U5rMrSI7Pn4
+
+fotos/
+foto-01.jpg  —  Sonja Langford  —  https://unsplash.com/photos/Y2PYfopoz-k
+foto-02.jpg  —  Sander Weeteling  —  https://unsplash.com/photos/rlxZqmc6D_I
+foto-03.jpg  —  Rula Sibai  —  https://unsplash.com/photos/-vq7mi4oF0s
+foto-04.jpg  —  Julie Geiger  —  https://unsplash.com/photos/dYshDcTI1Js
+foto-05.jpg  —  Johnny Lam  —  https://unsplash.com/photos/63qfL0TciY8
+foto-06.jpg  —  Gozha Net  —  https://unsplash.com/photos/xDrxJCdedcI
+foto-07.jpg  —  Barcelona  —  https://unsplash.com/photos/o697BgRH_-M
+foto-08.jpg  —  Barcelona  —  https://unsplash.com/photos/muC_6gTMLR4
+foto-09.jpg  —  Vectorbeast  —  https://unsplash.com/photos/rsJtMXn3p_c
+foto-10.jpg  —  Rula Sibai  —  https://unsplash.com/photos/qVj3KuEikvg
+foto-11.jpg  —  Jennifer Trovato  —  https://unsplash.com/photos/baRYCsjO6z4
+foto-12.jpg  —  Rafael Souza  —  https://unsplash.com/photos/QxkBP3A9XmU
+foto-13.jpg  —  Caroline Sada  —  https://unsplash.com/photos/r1XwWjI4PyE
+foto-14.jpg  —  Jean Kleisz  —  https://unsplash.com/photos/4yzPVohNuVI
+foto-15.jpg  —  Kundan Ramisetti  —  https://unsplash.com/photos/87TJNWkepvI
+foto-16.jpg  —  Pawel Kadysz  —  https://unsplash.com/photos/CuFYW1c97w8
+foto-17.jpg  —  Laurice Solomon  —  https://unsplash.com/photos/ThJIf6Q0b2s
+foto-18.jpg  —  Jon Toney  —  https://unsplash.com/photos/xyDQNmT6vSs
+foto-19.jpg  —  Tina Rataj  —  https://unsplash.com/photos/pwaaqfoMibI
+foto-20.jpg  —  Christian Bardenhorst  —  https://unsplash.com/photos/8lMhzUjD1Wk
+foto-21.jpg  —  Ben Moore  —  https://unsplash.com/photos/pJILiyPdrXI
+foto-22.jpg  —  Ilham Rahmansyah  —  https://unsplash.com/photos/DwTZwZYi9Ww
+foto-23.jpg  —  Dyaa Eldin  —  https://unsplash.com/photos/2fl-ocJ5MOA
+foto-24.jpg  —  Arvee Marie  —  https://unsplash.com/photos/YnfGtpt2gf4
+foto-25.jpg  —  Lukas Schweizer  —  https://unsplash.com/photos/9VWOr22LhVI
+foto-26.jpg  —  Florian Klauer  —  https://unsplash.com/photos/t1mqA3V3-7g
+foto-27.jpg  —  Zwaddi  —  https://unsplash.com/photos/YvYBOSiBJE8
+foto-28.jpg  —  Kenneth Thewissen  —  https://unsplash.com/photos/D76DklsG-5U
+foto-29.jpg  —  Gabe Rodriguez  —  https://unsplash.com/photos/eLUegVAjN7s
+foto-30.jpg  —  Zugr  —  https://unsplash.com/photos/kmF_Aq8gkp0
+foto-31.jpg  —  Zugr  —  https://unsplash.com/photos/yZf1quatKCA
+foto-32.jpg  —  Brian Gonzalez  —  https://unsplash.com/photos/llYg8Ni43fc
+foto-33.jpg  —  Christian Hebell  —  https://unsplash.com/photos/A6S-q3D67Ss
+foto-34.jpg  —  Anton Sulsky  —  https://unsplash.com/photos/YcfCXxo7rpc
+foto-35.jpg  —  Daniel Ebersole  —  https://unsplash.com/photos/Q14J2k8VE3U
+foto-36.jpg  —  Rick Waalders  —  https://unsplash.com/photos/d-Cr8MEW5Uc
+foto-37.jpg  —  Nadir Balcikli  —  https://unsplash.com/photos/wE9nUW7tMmk
+foto-38.jpg  —  Guillaume  —  https://unsplash.com/photos/_DA3D5P71qs
+foto-39.jpg  —  Radio Pink  —  https://unsplash.com/photos/p-bkdO43shE
+foto-40.jpg  —  Vadim Sherbakov  —  https://unsplash.com/photos/xS_RzdD5CFE
+foto-41.jpg  —  Mark Doda  —  https://unsplash.com/photos/tS9hJOnmKK8
+foto-42.jpg  —  Anton Sulsky  —  https://unsplash.com/photos/fj0tFloTPGQ
+foto-43.jpg  —  Rick Waalders  —  https://unsplash.com/photos/3HlgJNdnD7I
+foto-44.jpg  —  Zugr  —  https://unsplash.com/photos/asrWX-lU3RE
+foto-45.jpg  —  Marcin Czerwinski  —  https://unsplash.com/photos/rf-0DQu5M6Y
+foto-46.jpg  —  Matteo Minelli  —  https://unsplash.com/photos/hlnucYOsL-c
+foto-47.jpg  —  Charlie Foster  —  https://unsplash.com/photos/A88emaZe7d8
+foto-48.jpg  —  Ryan Jacques  —  https://unsplash.com/photos/ywiAen4L4qA
+foto-49.jpg  —  Charlie Foster  —  https://unsplash.com/photos/yPaskTQiNjA
+foto-50.jpg  —  Peter Besser  —  https://unsplash.com/photos/gq4kE8KRP8c

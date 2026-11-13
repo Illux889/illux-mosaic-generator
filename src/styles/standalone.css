@@ -1,0 +1,6 @@
+/*
+ * Page-level styles for the standalone page (index.html, the iframe target).
+ * Not needed when the app is rendered inside a Shopware template.
+ */
+html, body { margin: 0; background: var(--ilx-bg); }
+body { padding: var(--ilx-gutter); }

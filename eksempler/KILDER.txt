@@ -1,0 +1,15 @@
+Før- og efter-eksemplerne på siden ("Ét motiv. Mange historier.")
+
+Hovedbillederne til hund, barn, bryllup og fodbold ("foer") er skåret ud af AI-genererede
+inspirationsbilleder i Illux' interne udkast. Personerne er opdigtede.
+klub-foer.jpg er et opdigtet klubmærke ("DIN KLUB"), tegnet til siden. Det er ikke en rigtig klub.
+logo-foer.jpg er ILLUX' eget logo.
+
+Mosaikkerne ("efter") er lavet med mosaikværktøjet (tools/make-examples.js) ud fra hovedbillederne:
+100 x 100 cm, 150 DPI. Hund, barn, bryllup og fodbold: 100 x 100 felter, anbefalede indstillinger.
+Klubmærket og logoet: 80 x 80 felter og færre detaljer i de små billeder (45 af 100), så bogstaverne står skarpt.
+Klubmærket er bygget af 90 sportsbilleder, logoet af 170 lyse billeder af kontorer og planter.
+"efter" er printfilen skaleret ned, og "detalje" er et udsnit af printfilen (6-7 x 6-7 felter).
+
+De små billeder i mosaikkerne er fra Unsplash (Unsplash-licens: gratis, også kommercielt, kreditering
+ikke påkrævet, https://unsplash.com/license). De ligger kun lokalt; kun de færdige mosaikker er udgivet.

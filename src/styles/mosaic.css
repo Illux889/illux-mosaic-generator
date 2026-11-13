@@ -1,0 +1,446 @@
+/*
+ * Illux Mosaik — component styles. Everything is scoped under .ilx-mosaic and
+ * every class is prefixed ilx-mosaic-, so the stylesheet can be dropped into a
+ * Shopware template without leaking. No global resets.
+ * Visual language = illux.dk (tokens.css). Accessibility rules (WCAG 2.2 AA):
+ * visible focus, 44px touch targets, no information by colour alone, text can
+ * grow/wrap (no fixed heights on text), reduced motion and forced colours respected.
+ */
+
+/* ---------- Base ---------- */
+.ilx-mosaic {
+  font-family: var(--ilx-font);
+  font-size: var(--ilx-config-font-size);
+  line-height: var(--ilx-line-height);
+  letter-spacing: var(--ilx-config-letter-spacing);
+  color: var(--ilx-text);
+  background: var(--ilx-bg);
+  -webkit-text-size-adjust: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flow-root; /* children's margins stay inside the app box (correct height when embedded) */
+}
+.ilx-mosaic *, .ilx-mosaic *::before, .ilx-mosaic *::after { box-sizing: border-box; }
+.ilx-mosaic [hidden] { display: none !important; }
+.ilx-mosaic p { margin: 0 0 var(--ilx-space-3); }
+.ilx-mosaic img, .ilx-mosaic canvas { display: block; max-width: 100%; }
+.ilx-mosaic svg { flex: none; }
+.ilx-mosaic a { color: var(--ilx-text); text-decoration: underline; }
+.ilx-mosaic :focus { outline: none; }
+.ilx-mosaic :focus-visible { outline: var(--ilx-focus-width) solid var(--ilx-focus); outline-offset: 2px; }
+.ilx-mosaic [tabindex="-1"]:focus { outline: none; }
+.ilx-mosaic-visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.ilx-mosaic-help { color: var(--ilx-muted); font-size: 15px; }
+.ilx-mosaic-small { font-size: 14px; }
+
+/* ---------- Header ---------- */
+.ilx-mosaic-header { margin-bottom: var(--ilx-space-4); }
+.ilx-mosaic-title {
+  font-size: var(--ilx-title-size); font-weight: var(--ilx-title-weight); letter-spacing: var(--ilx-title-letter-spacing);
+  line-height: 40px; color: var(--ilx-heading); margin: 0 0 var(--ilx-space-2);
+}
+.ilx-mosaic-lead { max-width: 46em; }
+.ilx-mosaic-privacy {
+  display: flex; gap: var(--ilx-space-2); align-items: flex-start; max-width: 46em;
+  background: var(--ilx-bg-secondary); padding: 12px 16px; font-size: 15px;
+}
+.ilx-mosaic-privacy svg { width: 20px; height: 20px; margin-top: 1px; color: var(--ilx-primary); }
+
+/* ---------- Step indicator ---------- */
+.ilx-mosaic-steps { margin: 0 0 var(--ilx-space-4); }
+.ilx-mosaic-steps__list {
+  list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid var(--ilx-option-border);
+}
+.ilx-mosaic-steps__button {
+  width: 100%; min-height: var(--ilx-target-min); display: flex; align-items: center; gap: 10px;
+  padding: 12px 8px 14px; background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px;
+  font: inherit; font-size: 15px; color: var(--ilx-muted); text-align: left; cursor: pointer; letter-spacing: inherit;
+}
+.ilx-mosaic-steps__button:disabled { cursor: default; }
+.ilx-mosaic-steps__num {
+  flex: none; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  border: 2px solid var(--ilx-control-border); font-weight: 700; font-size: 14px; color: var(--ilx-text); background: var(--ilx-bg);
+}
+.ilx-mosaic-steps__num svg { display: none; width: 16px; height: 16px; stroke-width: 3; }
+.ilx-mosaic-steps__item.is-done .ilx-mosaic-steps__num { border-color: var(--ilx-accent-strong); color: var(--ilx-accent-strong); }
+.ilx-mosaic-steps__item.is-done .ilx-mosaic-steps__digit { display: none; }
+.ilx-mosaic-steps__item.is-done .ilx-mosaic-steps__num svg { display: block; }
+.ilx-mosaic-steps__item.is-done .ilx-mosaic-steps__button { color: var(--ilx-text); }
+.ilx-mosaic-steps__item.is-done .ilx-mosaic-steps__button:hover .ilx-mosaic-steps__name { text-decoration: underline; }
+.ilx-mosaic-steps__button[aria-current="step"] { color: var(--ilx-text); font-weight: 700; border-bottom-color: var(--ilx-accent-strong); }
+.ilx-mosaic-steps__button[aria-current="step"] .ilx-mosaic-steps__num { background: var(--ilx-accent-strong); border-color: var(--ilx-accent-strong); color: #fff; }
+.ilx-mosaic-steps__button[aria-current="step"] .ilx-mosaic-steps__num svg { display: none; }
+.ilx-mosaic-steps__button[aria-current="step"] .ilx-mosaic-steps__digit { display: inline; }
+@media (max-width: 575.98px) {
+  .ilx-mosaic-steps__button { flex-direction: column; align-items: center; text-align: center; gap: 4px; font-size: 13px; padding: 8px 2px 10px; }
+}
+
+/* ---------- Panels (one step at a time) ---------- */
+.ilx-mosaic-panel { margin-bottom: var(--ilx-space-5); }
+.ilx-mosaic-panel__title {
+  margin: 0 0 var(--ilx-space-3); font-size: 22px; font-weight: 600; letter-spacing: .7px; line-height: 1.3; color: var(--ilx-heading);
+}
+.ilx-mosaic-panel__count {
+  display: block; font-size: var(--ilx-label-size); font-weight: 700; text-transform: uppercase; letter-spacing: .7px;
+  color: var(--ilx-muted); margin-bottom: 4px;
+}
+.ilx-mosaic-panel__intro { max-width: 46em; font-size: 16px; }
+.ilx-mosaic-sectiontitle {
+  font-size: var(--ilx-label-size); font-weight: 700; text-transform: uppercase; letter-spacing: .7px; line-height: 19px;
+  margin: 0 0 var(--ilx-space-3); padding-bottom: 8px; border-bottom: 1px solid var(--ilx-option-border);
+}
+
+/* ---------- Buttons (illux.dk .btn variants) ---------- */
+.ilx-mosaic-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: var(--ilx-btn-height-md); padding: 8px 20px;
+  font-family: inherit; font-size: var(--ilx-btn-font-size); font-weight: var(--ilx-btn-font-weight);
+  text-transform: var(--ilx-btn-transform); letter-spacing: normal; line-height: 1.3; text-align: center; text-decoration: none;
+  border: 1px solid var(--ilx-primary); border-radius: var(--ilx-radius);
+  background: var(--ilx-bg); color: var(--ilx-primary);
+  cursor: pointer; -webkit-tap-highlight-color: transparent; transition: var(--ilx-btn-transition);
+}
+.ilx-mosaic-btn svg { width: 20px; height: 20px; }
+.ilx-mosaic-btn:hover { background: var(--ilx-primary); color: #fff; }
+.ilx-mosaic-btn:active { background: var(--ilx-primary-active); border-color: var(--ilx-primary-active); color: #fff; }
+.ilx-mosaic-btn[aria-disabled="true"] { opacity: var(--ilx-btn-disabled-opacity); cursor: not-allowed; }
+/* Forward action: filled olive (illux.dk .nav-artshop-btn "Udforsk Art Shop"): white on #5B5544 = 7.4:1. */
+.ilx-mosaic-btn--filled { background: var(--ilx-primary); color: #fff; font-size: 16px; font-weight: 700; text-transform: none; }
+.ilx-mosaic-btn--filled:hover { background: var(--ilx-primary-hover); border-color: var(--ilx-primary-hover); }
+/* Secondary = illux.dk .btn-primary as rendered (white, olive border, uppercase). */
+.ilx-mosaic-btn--secondary { background: var(--ilx-bg); color: var(--ilx-primary); }
+.ilx-mosaic-btn--small { min-height: var(--ilx-target-min); padding: 6px 16px; }
+/* Upload = illux.dk .btn-upload-print-file ("Upload foto"): 20px bold = large text, 3.9:1 passes. */
+.ilx-mosaic-btn--upload {
+  background: var(--ilx-accent); border-color: var(--ilx-accent); color: #fff; border-radius: var(--ilx-upload-radius);
+  font-size: 20px; font-weight: 700; text-transform: none; padding: 8px 20px 8px 16px;
+}
+.ilx-mosaic-btn--upload:hover, .ilx-mosaic-btn--upload:active { background: var(--ilx-accent-strong); border-color: var(--ilx-accent-strong); color: #fff; }
+/* Print download = illux.dk .btn-buy ("Tilføj til kurv"), text kept at 19px bold so 3.6:1 counts as large text. */
+.ilx-mosaic-btn--buy {
+  background: var(--ilx-buy); border-color: var(--ilx-buy); color: #fff; font-size: 19px; font-weight: 700; text-transform: uppercase;
+  width: 100%;
+}
+.ilx-mosaic-btn--buy:hover, .ilx-mosaic-btn--buy:active { background: #477c43; border-color: #477c43; color: #fff; }
+/* Text link button (illux.dk "Vis flere": #2E2E2C, 500, underline). Padded to a 44px target. */
+.ilx-mosaic-link {
+  font: inherit; font-weight: 500; letter-spacing: inherit; color: var(--ilx-secondary); background: none; border: 0;
+  padding: 10px 4px; min-height: var(--ilx-target-min); text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+}
+.ilx-mosaic-link:hover { text-decoration-thickness: 2px; }
+
+/* ---------- Layout helpers ---------- */
+.ilx-mosaic-actions { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin: var(--ilx-space-3) 0; }
+.ilx-mosaic-stepnav {
+  display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center;
+  margin-top: var(--ilx-space-4); padding-top: var(--ilx-space-4); border-top: 1px solid var(--ilx-option-border);
+}
+@media (max-width: 575.98px) {
+  .ilx-mosaic-stepnav .ilx-mosaic-btn { width: 100%; }
+}
+
+/* ---------- Upload area ---------- */
+.ilx-mosaic-upload {
+  background: var(--ilx-bg-secondary); padding: 32px 20px; text-align: center;
+  border: 2px dashed transparent; transition: border-color .15s ease-out, background-color .15s ease-out;
+}
+.ilx-mosaic-upload.is-dragover { border-color: var(--ilx-accent-strong); background: var(--ilx-accent-soft); }
+.ilx-mosaic-upload__drop { margin: 12px 0 4px !important; }
+@media (pointer: coarse) { .ilx-mosaic-upload__drop { display: none; } .ilx-mosaic-upload__formats { margin-top: 12px !important; } }
+/* The grey --ilx-muted is only 4.44:1 on the beige upload area (needs 4.5:1); this darker grey is 5.9:1. */
+.ilx-mosaic-upload__formats { margin: 0 !important; color: #55575f; font-size: 15px; }
+.ilx-mosaic-target { margin: 0; }
+.ilx-mosaic-target img { margin: 0 auto; max-height: 340px; width: auto; background: var(--ilx-bg); }
+.ilx-mosaic-target__caption { margin-top: 8px; font-size: 15px; color: #55575f; word-break: break-word; } /* 5.9:1 on the beige upload area (--ilx-muted is 4.44:1) */
+.ilx-mosaic-busy { display: flex; gap: 10px; align-items: center; margin-top: var(--ilx-space-3) !important; }
+.ilx-mosaic-busy svg, .ilx-mosaic-working__title svg { width: 22px; height: 22px; color: var(--ilx-accent-strong); }
+.ilx-mosaic-spinner { animation: ilx-mosaic-spin 1s linear infinite; }
+@keyframes ilx-mosaic-spin { to { transform: rotate(360deg); } }
+
+/* ---------- Photo list ---------- */
+.ilx-mosaic-count { margin-top: var(--ilx-space-3); }
+.ilx-mosaic-count__number { font-weight: 700; margin-bottom: 4px !important; }
+.ilx-mosaic-count__level { display: flex; gap: 8px; align-items: flex-start; }
+.ilx-mosaic-count__level svg { width: 20px; height: 20px; margin-top: 2px; }
+.ilx-mosaic-count__level.is-few svg { color: var(--ilx-warning); }
+.ilx-mosaic-count__level.is-ok svg { color: var(--ilx-accent-strong); }
+.ilx-mosaic-count__level.is-good svg { color: var(--ilx-buy); }
+.ilx-mosaic-thumbs {
+  list-style: none; margin: var(--ilx-space-3) 0 0; padding: 4px; display: grid; gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  max-height: 420px; overflow-y: auto; border: 1px solid var(--ilx-option-border);
+}
+.ilx-mosaic-thumb { position: relative; aspect-ratio: 1; background: var(--ilx-surface); }
+.ilx-mosaic-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.ilx-mosaic-thumb__remove {
+  position: absolute; top: 4px; right: 4px; width: 32px; height: 32px; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; color: var(--ilx-text); border: 1px solid var(--ilx-control-border); border-radius: 50%; cursor: pointer;
+}
+.ilx-mosaic-thumb__remove svg { width: 16px; height: 16px; stroke-width: 2.4; }
+.ilx-mosaic-thumb__remove:hover { background: var(--ilx-secondary); color: #fff; border-color: var(--ilx-secondary); }
+
+/* ---------- Notes, errors, info ---------- */
+.ilx-mosaic-note {
+  display: block; padding: 12px 16px; margin: var(--ilx-space-3) 0 0; font-size: 15px;
+  border-left: 4px solid var(--ilx-info); background: var(--ilx-surface); color: var(--ilx-text);
+}
+.ilx-mosaic-note p:last-child { margin-bottom: 0; }
+.ilx-mosaic-note ul { margin: 6px 0 0; padding-left: 1.2em; }
+.ilx-mosaic-note--warning { border-left-color: var(--ilx-warning); }
+.ilx-mosaic-note--danger { border-left-color: var(--ilx-danger); }
+.ilx-mosaic-note--success { border-left-color: var(--ilx-buy); display: flex; gap: 10px; align-items: flex-start; }
+.ilx-mosaic-note--success svg { width: 22px; height: 22px; color: var(--ilx-buy); margin-top: 1px; }
+.ilx-mosaic-note__lead { font-weight: 700; }
+.ilx-mosaic-stale { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+.ilx-mosaic-stale p { margin: 0 !important; flex: 1 1 240px; }
+.ilx-mosaic-errorsummary {
+  border: 2px solid var(--ilx-danger); padding: 16px 20px; margin: 0 0 var(--ilx-space-4);
+}
+.ilx-mosaic-errorsummary__title {
+  display: flex; gap: 8px; align-items: center; margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: .7px;
+}
+.ilx-mosaic-errorsummary__title svg { width: 22px; height: 22px; color: var(--ilx-danger); }
+.ilx-mosaic-errorsummary__list { margin: 0; padding-left: 1.2em; }
+.ilx-mosaic-errorsummary__list a { color: var(--ilx-danger); font-weight: 600; }
+.ilx-mosaic-infolist { list-style: none; margin: var(--ilx-space-3) 0; padding: 0; color: var(--ilx-info-text); font-size: 15px; }
+.ilx-mosaic-infolist li { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; }
+.ilx-mosaic-infolist svg { width: 20px; height: 20px; margin-top: 1px; color: var(--ilx-accent-strong); }
+
+/* ---------- Form fields (illux.dk configurator) ---------- */
+.ilx-mosaic-fieldlabel {
+  display: block; margin: 0 0 6px; font-size: var(--ilx-label-size); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .7px; line-height: 23px; color: var(--ilx-text);
+}
+.ilx-mosaic-input {
+  display: block; width: 100%; min-height: var(--ilx-input-height); padding: 12px; font: inherit; font-size: 16px; letter-spacing: normal;
+  color: var(--ilx-text); background: var(--ilx-bg); border: 1px solid var(--ilx-control-border); border-radius: var(--ilx-input-radius);
+  appearance: none; -webkit-appearance: none;
+}
+.ilx-mosaic-input:focus-visible { border-color: var(--ilx-focus); }
+.ilx-mosaic-input[aria-invalid="true"] { border: 2px solid var(--ilx-danger); }
+.ilx-mosaic-input--color { width: 88px; padding: 4px; cursor: pointer; }
+.ilx-mosaic-inputunit { position: relative; }
+.ilx-mosaic-inputunit .ilx-mosaic-input { padding-right: 44px; }
+.ilx-mosaic-inputunit__unit { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--ilx-muted); pointer-events: none; }
+.ilx-mosaic-fielderror { display: flex; gap: 6px; color: var(--ilx-danger); font-size: 15px; font-weight: 600; margin: 6px 0 0 !important; }
+.ilx-mosaic-sizebox { border: 1px solid var(--ilx-option-border); padding: 16px 20px; margin: 0; min-width: 0; }
+.ilx-mosaic-sizebox__title { font-size: var(--ilx-boxtitle-size); font-weight: 600; letter-spacing: .7px; padding: 0 6px; margin-left: -6px; }
+.ilx-mosaic-sizebox__fields { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px 16px; margin: 8px 0 16px; }
+.ilx-mosaic-sizebox__fields .ilx-mosaic-field { flex: 1 1 140px; max-width: 220px; }
+.ilx-mosaic-sizebox__times { align-self: center; margin-top: 26px; font-size: 20px; }
+.ilx-mosaic-sizesummary { font-size: 18px; font-weight: 600; letter-spacing: .7px; }
+.ilx-mosaic-check { display: flex; gap: 12px; align-items: center; min-height: var(--ilx-target-min); cursor: pointer; }
+.ilx-mosaic-check input {
+  flex: none; width: 22px; height: 22px; margin: 0; appearance: none; -webkit-appearance: none; cursor: pointer;
+  background: var(--ilx-bg) no-repeat center / 16px; border: 2px solid var(--ilx-control-border); border-radius: 2px;
+}
+.ilx-mosaic-check input:checked {
+  background-color: var(--ilx-accent-strong); border-color: var(--ilx-accent-strong);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m5 10 3.5 3.5L15 7'/%3e%3c/svg%3e");
+}
+.ilx-mosaic-check__help { margin: -4px 0 12px 34px !important; }
+
+/* ---------- Choice rows (illux.dk .configuration-offcanvas-option) ---------- */
+.ilx-mosaic-choices { border: 0; margin: 0 0 var(--ilx-space-4); padding: 0; min-width: 0; }
+.ilx-mosaic-choices__legend { padding: 0; margin-bottom: 6px; font-size: var(--ilx-boxtitle-size); font-weight: 600; letter-spacing: .7px; line-height: 1.35; }
+.ilx-mosaic-choices__list { display: grid; gap: 8px; margin-top: 8px; }
+@media (min-width: 768px) {
+  .ilx-mosaic-choices__list { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
+.ilx-mosaic-choices__list--compact { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.ilx-mosaic-choice {
+  display: flex; gap: 12px; align-items: flex-start; min-height: 58px; padding: 16px 20px; cursor: pointer;
+  border: 1px solid var(--ilx-option-border); border-radius: var(--ilx-choice-radius); background: var(--ilx-bg);
+}
+.ilx-mosaic-choice:hover { border-color: var(--ilx-control-border); }
+.ilx-mosaic-choice:has(input:checked) { border: 2px solid var(--ilx-accent); background: var(--ilx-accent-soft); padding: 15px 19px; }
+.ilx-mosaic-choice:has(input:focus-visible) { outline: var(--ilx-focus-width) solid var(--ilx-focus); outline-offset: 2px; }
+.ilx-mosaic-choice input {
+  flex: none; width: 22px; height: 22px; margin: 1px 0 0; appearance: none; -webkit-appearance: none; cursor: pointer;
+  border: 2px solid var(--ilx-control-border); border-radius: 50%; background: var(--ilx-bg);
+}
+.ilx-mosaic-choice input:checked { border-color: var(--ilx-accent-strong); box-shadow: inset 0 0 0 4px var(--ilx-bg); background: var(--ilx-accent-strong); }
+.ilx-mosaic-choice input:focus-visible { outline: none; }
+.ilx-mosaic-choice__text { display: block; }
+.ilx-mosaic-choice__help { display: block; margin-top: 4px; font-size: 14px; color: var(--ilx-muted); letter-spacing: normal; }
+
+/* ---------- Sliders (expert) ---------- */
+.ilx-mosaic-slider { margin-bottom: var(--ilx-space-4); }
+.ilx-mosaic-slider__head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.ilx-mosaic-slider__value { font-weight: 700; min-width: 3ch; text-align: right; }
+.ilx-mosaic-range { width: 100%; height: var(--ilx-target-min); margin: 0; background: transparent; appearance: none; -webkit-appearance: none; cursor: pointer; }
+.ilx-mosaic-range::-webkit-slider-runnable-track { height: 8px; background: var(--ilx-range-track-bg); border: 1px solid var(--ilx-control-border); border-radius: 1rem; }
+.ilx-mosaic-range::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 26px; height: 26px; margin-top: -10px;
+  background: var(--ilx-primary); border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px var(--ilx-primary);
+}
+.ilx-mosaic-range::-moz-range-track { height: 8px; background: var(--ilx-range-track-bg); border: 1px solid var(--ilx-control-border); border-radius: 1rem; }
+.ilx-mosaic-range::-moz-range-thumb { width: 22px; height: 22px; background: var(--ilx-primary); border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px var(--ilx-primary); }
+.ilx-mosaic-range:focus-visible { outline: var(--ilx-focus-width) solid var(--ilx-focus); outline-offset: 2px; }
+
+/* ---------- Disclosure ("Flere indstillinger") = illux.dk .configuration-option row ---------- */
+.ilx-mosaic-disclosure {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left;
+  padding: 16px 22px 17px 14px; min-height: var(--ilx-target-min); background: var(--ilx-bg); color: var(--ilx-text); cursor: pointer;
+  font: inherit; letter-spacing: inherit; border: 0; border-top: 1px solid var(--ilx-option-border); border-bottom: 1px solid var(--ilx-option-border);
+  border-left: 4px solid var(--ilx-accent);
+}
+.ilx-mosaic-disclosure__title { display: block; font-size: 18px; font-weight: 550; letter-spacing: .9px; }
+.ilx-mosaic-disclosure__sub { display: block; margin-top: 2px; font-size: 14px; color: var(--ilx-muted); letter-spacing: normal; }
+.ilx-mosaic-disclosure svg { width: 20px; height: 20px; transition: transform .15s ease-out; }
+.ilx-mosaic-disclosure[aria-expanded="true"] svg { transform: rotate(180deg); }
+.ilx-mosaic-disclosure--small { border-left-width: 0; padding-left: 0; padding-right: 4px; }
+.ilx-mosaic-disclosure--small .ilx-mosaic-disclosure__title { font-size: 16px; font-weight: 600; }
+.ilx-mosaic-options { margin-top: var(--ilx-space-5); }
+.ilx-mosaic-options__body { padding: var(--ilx-space-4) 0 0; }
+.ilx-mosaic-options__raw { margin-bottom: var(--ilx-space-3); }
+.ilx-mosaic-expert { margin-top: var(--ilx-space-3); }
+.ilx-mosaic-expert__body { padding-top: var(--ilx-space-3); }
+
+/* ---------- Progress ---------- */
+.ilx-mosaic-progress { margin-top: var(--ilx-space-3); }
+.ilx-mosaic-progress__bar { height: 10px; background: var(--ilx-range-track-bg); border: 1px solid var(--ilx-control-border); overflow: hidden; margin: 8px 0; }
+.ilx-mosaic-progress__fill { height: 100%; width: 0; background: var(--ilx-accent-strong); transition: width .2s ease-out; }
+.ilx-mosaic-progress__text { margin: 0 !important; }
+.ilx-mosaic-working { background: var(--ilx-surface); padding: 24px; }
+.ilx-mosaic-working__title { display: flex; gap: 12px; align-items: center; font-size: 18px; font-weight: 600; letter-spacing: .7px; margin-bottom: 4px !important; }
+
+/* ---------- Viewer ---------- */
+.ilx-mosaic-result { margin-top: var(--ilx-space-3); }
+.ilx-mosaic-viewer { display: grid; gap: var(--ilx-space-4); grid-template-columns: minmax(0, 1fr); margin-top: var(--ilx-space-4); background: var(--ilx-bg); }
+@media (min-width: 992px) { .ilx-mosaic-viewer { grid-template-columns: minmax(0, 1fr) 240px; } }
+.ilx-mosaic-viewer__main { min-width: 0; }
+.ilx-mosaic-viewer__toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+.ilx-mosaic-viewer__toolbar .ilx-mosaic-btn svg { width: 18px; height: 18px; }
+.ilx-mosaic-viewer__zoomvalue { font-weight: 700; margin-left: 4px; }
+.ilx-mosaic-stage {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  background: var(--ilx-bg-secondary); padding: 12px; overflow: hidden; min-height: 200px;
+}
+.ilx-mosaic-canvas { touch-action: none; cursor: grab; box-shadow: var(--ilx-shadow-sm); }
+/* Lock: no long-press "save image" menu, no selection or dragging of the mosaic (see ui/watermark.js). */
+.ilx-mosaic canvas { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; -webkit-user-drag: none; }
+.ilx-mosaic-canvas.is-dragging { cursor: grabbing; }
+.ilx-mosaic-canvas:focus-visible { outline-offset: 3px; }
+.ilx-mosaic-tooltip {
+  position: absolute; z-index: 2; pointer-events: none; max-width: 280px; padding: 6px 10px;
+  background: var(--ilx-secondary); color: #fff; font-size: 14px; transform: translate(12px, 12px); word-break: break-word;
+}
+.ilx-mosaic-rawlabel { position: absolute; left: 12px; top: 12px; z-index: 1; background: #fff; padding: 4px 10px; font-size: 14px; font-weight: 700; }
+.ilx-mosaic-viewer__side { display: flex; flex-direction: column; gap: var(--ilx-space-3); }
+.ilx-mosaic-far { width: 100%; max-width: 240px; cursor: pointer; background: var(--ilx-surface); }
+.ilx-mosaic-hints { margin: 0 0 12px; padding-left: 1.1em; font-size: 15px; }
+.ilx-mosaic-hints li { margin-bottom: 6px; }
+.ilx-mosaic-hint--touch { display: none; }
+@media (pointer: coarse) { .ilx-mosaic-hint--touch { display: list-item; } .ilx-mosaic-hint--mouse { display: none; } }
+@media (max-width: 991.98px) {
+  .ilx-mosaic-viewer__side { flex-direction: row; flex-wrap: wrap; }
+  .ilx-mosaic-viewer__far { flex: 0 0 140px; }
+  .ilx-mosaic-viewer__help { flex: 1 1 220px; }
+}
+/* Real fullscreen */
+.ilx-mosaic-viewer:fullscreen { padding: 16px; overflow: auto; }
+.ilx-mosaic-viewer:-webkit-full-screen { padding: 16px; }
+/* Fallback fullscreen (iPhone has no element fullscreen): covers the visible part of the frame/page. */
+.ilx-mosaic-viewer.is-pseudo-fullscreen {
+  position: fixed; z-index: 2147483000; left: 0; right: 0; top: var(--ilx-visible-top, 0px); height: var(--ilx-visible-height, 100vh);
+  margin: 0; padding: 12px; overflow: auto; grid-template-columns: minmax(0, 1fr);
+}
+.ilx-mosaic-viewer.is-pseudo-fullscreen .ilx-mosaic-viewer__side { display: none; }
+
+/* ---------- Downloads ---------- */
+.ilx-mosaic-downloads { margin-top: var(--ilx-space-5); }
+.ilx-mosaic-downloads__grid { display: grid; gap: 16px 24px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { .ilx-mosaic-downloads__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } }
+.ilx-mosaic-downloads__item .ilx-mosaic-btn { width: 100%; }
+.ilx-mosaic-downloads__item .ilx-mosaic-help { margin: 8px 0 0 !important; }
+
+/* ---------- Dialogs ---------- */
+.ilx-mosaic-dialog {
+  width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 0; border-radius: 0;
+  box-shadow: var(--ilx-shadow-lg); background: var(--ilx-bg); color: var(--ilx-text); overflow: auto;
+  font-family: var(--ilx-font); font-size: 16px; line-height: var(--ilx-line-height); letter-spacing: var(--ilx-config-letter-spacing);
+}
+.ilx-mosaic-dialog--small { width: min(520px, calc(100vw - 32px)); }
+.ilx-mosaic-dialog::backdrop { background: rgba(0, 0, 0, .55); }
+.ilx-mosaic-dialog.is-anchored {
+  position: fixed; margin: 0 auto; inset: auto 0 auto 0;
+  top: calc(var(--ilx-visible-top, 0px) + 16px); max-height: calc(var(--ilx-visible-height, 100vh) - 32px);
+}
+.ilx-mosaic-dialog__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 20px 20px 12px; }
+.ilx-mosaic-dialog__title { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: .7px; line-height: 1.3; word-break: break-word; }
+.ilx-mosaic-dialog__body { padding: 0 20px 8px; }
+.ilx-mosaic-dialog__foot { padding: 8px 20px 20px; margin: 0; }
+.ilx-mosaic-close {
+  display: inline-flex; align-items: center; gap: 6px; min-height: var(--ilx-target-min); padding: 6px 8px; flex: none;
+  background: none; border: 0; color: var(--ilx-text); font: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+}
+.ilx-mosaic-close svg { width: 18px; height: 18px; }
+.ilx-mosaic-close:hover { text-decoration: underline; }
+.ilx-mosaic-compare { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 12px; }
+@media (max-width: 575.98px) { .ilx-mosaic-compare { grid-template-columns: minmax(0, 1fr); } }
+.ilx-mosaic-compare figure { margin: 0; }
+.ilx-mosaic-compare canvas { width: 100%; height: auto; aspect-ratio: 1; background: var(--ilx-surface); }
+.ilx-mosaic-compare figcaption { margin-top: 6px; font-size: 15px; font-weight: 600; }
+.ilx-mosaic-fill { padding-top: 12px; }
+.ilx-mosaic-fill__color { margin-bottom: 12px; }
+
+/* ---------- One-screen layout ("workspace", version 3 "Værkstedet") ----------
+   Only applies with layout 'workspace' (the root gets .ilx-mosaic--workspace); the step flow is untouched.
+   Columns follow the reading order of the markup: your images | the mosaic | size and settings.
+   Below 1400px the settings move under the two columns; below 992px everything is one column. */
+.ilx-mosaic--workspace { max-width: 1680px; background: transparent; }
+.ilx-mosaic-workspace { display: grid; gap: var(--ilx-space-4); grid-template-columns: minmax(0, 1fr); align-items: start; }
+.ilx-mosaic-workspace__col { min-width: 0; display: flex; flex-direction: column; gap: var(--ilx-space-4); }
+.ilx-mosaic-app--workspace .ilx-mosaic-panel { margin: 0; padding: var(--ilx-space-4); background: var(--ilx-bg); border: 1px solid var(--ilx-border); }
+.ilx-mosaic-app--workspace .ilx-mosaic-panel__title { font-size: 20px; }
+.ilx-mosaic-app--workspace .ilx-mosaic-panel__title:focus-visible { outline: var(--ilx-focus-width) solid var(--ilx-focus); }
+.ilx-mosaic-app--workspace .ilx-mosaic-upload { padding: 24px 16px; }
+.ilx-mosaic-app--workspace .ilx-mosaic-target img { max-height: 220px; }
+.ilx-mosaic-app--workspace .ilx-mosaic-viewer { grid-template-columns: minmax(0, 1fr); }
+.ilx-mosaic-app--workspace .ilx-mosaic-viewer__side { flex-direction: row; flex-wrap: wrap; }
+.ilx-mosaic-app--workspace .ilx-mosaic-viewer__far { flex: 0 0 160px; }
+.ilx-mosaic-app--workspace .ilx-mosaic-viewer__help { flex: 1 1 240px; }
+.ilx-mosaic-app--workspace .ilx-mosaic-options__body { padding-top: 0; }
+.ilx-mosaic-app--workspace .ilx-mosaic-sizebox__fields .ilx-mosaic-field { flex: 1 1 120px; }
+.ilx-mosaic-app--workspace .ilx-mosaic-sizebox__times { display: none; } /* the fields often wrap in a narrow column */
+.ilx-mosaic-wsempty { background: var(--ilx-bg-secondary); padding: var(--ilx-space-4); }
+.ilx-mosaic-wsempty__title { font-weight: 700; }
+.ilx-mosaic-wsempty .ilx-mosaic-infolist { margin-bottom: 0; color: var(--ilx-text); }
+@media (min-width: 992px) {
+  .ilx-mosaic-workspace { grid-template-columns: minmax(280px, 340px) minmax(0, 1fr); }
+  .ilx-mosaic-workspace__col--settings { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; }
+  .ilx-mosaic-workspace__col--settings > .ilx-mosaic-actions { grid-column: 1 / -1; }
+}
+@media (min-width: 1400px) {
+  .ilx-mosaic-workspace { grid-template-columns: minmax(280px, 330px) minmax(0, 1fr) minmax(300px, 360px); }
+  .ilx-mosaic-workspace__col--settings { grid-column: auto; display: flex; }
+}
+
+/* ---------- Motion and forced colours ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ilx-mosaic *, .ilx-mosaic *::before, .ilx-mosaic *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+@media (forced-colors: active) {
+  .ilx-mosaic-choice:has(input:checked) { border: 3px solid Highlight; }
+  /* Use the system's own radio buttons and checkboxes, which always show their state here. */
+  .ilx-mosaic-choice input, .ilx-mosaic-check input { appearance: auto; -webkit-appearance: auto; background: none; box-shadow: none; }
+  .ilx-mosaic-btn, .ilx-mosaic-steps__num, .ilx-mosaic-thumb__remove { border: 1px solid ButtonText; }
+  .ilx-mosaic-progress__fill { background: Highlight; }
+  .ilx-mosaic-steps__button[aria-current="step"] { border-bottom-color: Highlight; }
+}
+
+/* "Størrelse på de små billeder" under the mosaic: changes the tile size in real time. */
+.ilx-mosaic-tilesize { margin-top: var(--ilx-space-4); padding: var(--ilx-space-4); border: 1px solid var(--ilx-control-border); background: var(--ilx-surface); }
+.ilx-mosaic-tilesize .ilx-mosaic-slider { margin-bottom: var(--ilx-space-2); }
+.ilx-mosaic-tilesize .ilx-mosaic-help { margin: 0; }
+/* Update of a mosaic on screen: a small box over the mosaic, so the page does not move. */
+.ilx-mosaic-updating { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, .35); pointer-events: none; }
+.ilx-mosaic-updating[hidden] { display: none; }
+.ilx-mosaic-updating__box { display: flex; gap: 10px; align-items: center; margin: 0; padding: 10px 16px; background: #fff; color: var(--ilx-text); font-weight: 600; box-shadow: var(--ilx-shadow-sm); }
+.ilx-mosaic-updating__box svg { width: 22px; height: 22px; color: var(--ilx-accent-strong); }

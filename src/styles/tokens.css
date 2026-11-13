@@ -1,0 +1,137 @@
+/*
+ * Illux Mosaik — design tokens extracted from illux.dk (fetched 2026-11-11).
+ * Source: the compiled Shopware theme stylesheet linked in the page head,
+ * https://www.illux.dk/theme/<hash>/css/all.css ("all.css" below), plus
+ * computed styles read in a browser on the live homepage ("live").
+ * Only custom properties live here, all prefixed --ilx-, so nothing collides
+ * with Shopware's own --bs-* / --sw-* variables when rendered inside the shop.
+ *
+ * Font: Open Sans, loaded from Google Fonts exactly like illux.dk does
+ * (all.css starts with @import fonts.googleapis.com ... Open+Sans:wght@300..700).
+ */
+:root {
+  /* Colour — brand / action */
+  --ilx-primary: #5B5544;                 /* all.css :root --bs-primary / --primary */
+  --ilx-primary-rgb: 91, 85, 68;          /* same, as RGB */
+  --ilx-primary-hover: #4d483a;           /* all.css .btn-primary --bs-btn-hover-bg */
+  --ilx-primary-active: #494436;          /* all.css .btn-primary --bs-btn-active-bg */
+  --ilx-secondary: #2E2E2C;               /* all.css --bs-secondary, .btn-secondary --bs-btn-bg */
+  --ilx-secondary-hover: #272725;         /* all.css .btn-secondary --bs-btn-hover-bg */
+
+  /* Colour — text */
+  --ilx-text: #000000;                    /* all.css --bs-body-color, p { color:#000000 }; live body rgb(0,0,0) */
+  --ilx-heading: #000000;                 /* all.css --bs-heading-color */
+  --ilx-muted: #666977;                   /* all.css .form-control::placeholder */
+  --ilx-link: #5B5544;                    /* all.css --bs-link-color */
+  --ilx-link-hover: #494436;              /* all.css --bs-link-hover-color */
+
+  /* Colour — surfaces */
+  --ilx-bg: #ffffff;                      /* all.css --bs-body-bg */
+  --ilx-bg-secondary: #EAE8E0;            /* all.css :root --background-secondary */
+  --ilx-bg-subtle: #f9f9f9;               /* all.css --bs-gray-100 */
+  --ilx-bg-disabled: #eeeeee;             /* all.css --bs-secondary-bg, .form-control:disabled */
+  --ilx-viewer-bg: #2E2E2C;               /* = --ilx-secondary; dark stage behind the mosaic (not on illux.dk) */
+
+  /* Colour — borders and focus */
+  --ilx-border: #C9C9C9;                  /* all.css --bs-border-color / --border */
+  --ilx-focus-ring: rgba(91, 85, 68, .6); /* all.css .form-control:focus box-shadow */
+  --ilx-btn-focus-ring: rgba(91, 85, 68, .5); /* all.css .btn:focus-visible: rgba(var(--bs-btn-focus-shadow-rgb), .5) */
+
+  /* Colour — status */
+  --ilx-success: #569551;                 /* all.css --bs-success */
+  --ilx-danger: #c20017;                  /* all.css --bs-danger */
+  --ilx-warning: #974200;                 /* all.css --bs-warning */
+  --ilx-info: #005b99;                    /* all.css --bs-info */
+
+  /* Typography */
+  --ilx-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; /* all.css --bs-body-font-family + --bs-font-sans-serif */
+  --ilx-font-size: .875rem;               /* all.css --bs-body-font-size (14px) */
+  --ilx-line-height: 1.5;                 /* all.css --bs-body-line-height */
+  --ilx-font-size-sm: .75rem;             /* all.css .small (0.875em of 14px is ~12px) */
+  --ilx-h2: calc(1.3rem + .6vw);          /* all.css h2 (1.75rem from 1200px, below) */
+  --ilx-h2-xl: 1.75rem;
+  --ilx-h4: 1.25rem;                      /* all.css h4 */
+  --ilx-heading-weight: 700;              /* all.css h1-h6 font-weight */
+  --ilx-heading-line-height: 1.2;         /* all.css h1-h6 line-height */
+  --ilx-lead-size: 1.09375rem;            /* all.css .lead */
+
+  /* Buttons (all.css .btn and .btn.btn-primary) */
+  --ilx-btn-font-size: .875rem;           /* .btn font-size */
+  --ilx-btn-font-weight: 600;             /* .btn font-weight */
+  --ilx-btn-transform: uppercase;         /* live .btn-primary text-transform */
+  --ilx-btn-height: 40px;                 /* .btn.btn-primary height (mobile) */
+  --ilx-btn-height-md: 50px;              /* .btn.btn-primary height from 768px */
+  --ilx-btn-min-width: 160px;             /* .btn.btn-primary min-width (mobile) */
+  --ilx-btn-min-width-md: 180px;          /* .btn.btn-primary min-width from 768px */
+  --ilx-btn-padding-x: 20px;              /* .btn.btn-primary padding 0 20px */
+  --ilx-btn-small-padding: 2px 12px;      /* .btn base padding */
+  --ilx-btn-small-line-height: 2.125rem;  /* .btn base line-height */
+  --ilx-btn-transition: all .1s ease-out; /* .btn.btn-primary transition */
+  --ilx-btn-disabled-opacity: .65;        /* Bootstrap --bs-btn-disabled-opacity (unchanged in all.css) */
+
+  /* Form controls (all.css .form-control / .form-select / .form-range / .form-check-input) */
+  --ilx-input-padding: .5625rem;          /* .form-control padding (9px) */
+  --ilx-input-padding-end-select: 27px;   /* .form-select padding-right */
+  --ilx-input-border: 1px solid #C9C9C9;  /* .form-control border */
+  --ilx-input-focus-shadow: 0 0 0 .125rem #fff, 0 0 0 .2rem rgba(91, 85, 68, .6); /* .form-control:focus */
+  --ilx-select-arrow-stroke: #4a545b;     /* .form-select background-image stroke */
+  --ilx-range-thumb: 1rem;                /* .form-range thumb size, radius 1rem */
+  --ilx-range-track-height: .5rem;        /* Bootstrap .form-range track */
+  --ilx-range-track-bg: #eeeeee;          /* --bs-secondary-bg */
+  --ilx-check-size: 1rem;                 /* .form-check-input */
+
+  /* Shape */
+  --ilx-radius: 0;                        /* all.css --bs-border-radius: 0 (square corners everywhere) */
+  --ilx-radius-pill: 50rem;               /* all.css --bs-border-radius-pill */
+
+  /* Shadows (all.css --bs-box-shadow*, live .btn-primary) */
+  --ilx-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  --ilx-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  --ilx-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, .175);
+
+  /* Product configurator (live, product page "Aluprint" → Størrelser, read 2026-11-11) */
+  --ilx-accent: #607ECE;                  /* live .configuration-offcanvas-option selected border, .btn-upload-print-file bg, active tab */
+  --ilx-accent-strong: #4C74B9;           /* live .configuration-option-link ("Vælg her") colour; 4.7:1 on white */
+  --ilx-accent-soft: #FCFDFF;             /* live selected option background */
+  --ilx-buy: #569551;                     /* live .btn.btn-primary.btn-buy ("Tilføj til kurv") */
+  --ilx-surface: #F8F8F8;                 /* live .cms-section.bg-color behind the configurator */
+  --ilx-option-border: #B5B2B2;           /* live option rows, size box, field borders */
+  --ilx-info-text: #00243D;               /* live .max-size-text-label */
+  --ilx-config-font-size: 16px;           /* live configurator text */
+  --ilx-config-letter-spacing: .7px;      /* live configurator letter-spacing */
+  --ilx-label-size: 14px;                 /* live .configuration-component-option-name (BREDDE/HØJDE): 700, uppercase, .7px */
+  --ilx-boxtitle-size: 18px;              /* live "Valgfri størrelse (cm)": 600, .7px */
+  --ilx-title-size: 25px;                 /* live product h1: 550 weight, 1.5px letter-spacing, 40px line-height */
+  --ilx-title-weight: 550;
+  --ilx-title-letter-spacing: 1.5px;
+  --ilx-input-height: 50px;               /* live configurator input: 50px, 16px text, padding 12px, radius 4px */
+  --ilx-input-radius: 4px;
+  --ilx-choice-radius: 2px;               /* live option row radius; padding 16px 20px */
+  --ilx-upload-radius: 3px;               /* live "Upload foto" button: 20px/700, 50px, radius 3px */
+
+  /*
+   * Accessibility adjustments (WCAG 2.2 AA). These are the ONLY places where we
+   * deliberately differ from illux.dk, because the original values fail contrast:
+   * - Control borders: #B5B2B2 is 2.0:1 on white (needs 3:1) -> #858181 (3.9:1), same warm grey family.
+   * - Focus: illux uses a 50% transparent shadow (about 2.3:1) -> solid 3px outline in illux's link blue (4.7:1).
+   * - Green/blue buttons with white text are only 3.6:1 / 3.9:1, so their text is kept at "large text" size
+   *   (at least 18.66px bold), where 3:1 is the requirement.
+   * - Success colour #569551 is 3.6:1 as text, so it is used for icons/borders only; text stays black.
+   */
+  --ilx-control-border: #858181;
+  --ilx-focus: #4C74B9;
+  --ilx-focus-width: 3px;
+  --ilx-target-min: 44px;                 /* comfortable touch target (WCAG 2.5.8 minimum is 24px) */
+
+  /* Spacing — Bootstrap scale used by the theme (1 = .25rem ... 5 = 3rem) */
+  --ilx-space-1: .25rem;
+  --ilx-space-2: .5rem;
+  --ilx-space-3: 1rem;
+  --ilx-space-4: 1.5rem;
+  --ilx-space-5: 3rem;
+
+  /* Layout (all.css .container / .container-lg) */
+  --ilx-container: 1400px;                /* .container max-width */
+  --ilx-gutter: 20px;                     /* .container-lg padding-left/right */
+  /* Breakpoints (all.css --bs-breakpoint-*): 576, 768, 992, 1200, 1400 px — used in media queries in mosaic.css. */
+}
